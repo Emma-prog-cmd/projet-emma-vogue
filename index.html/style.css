@@ -1,6 +1,113 @@
 /* Style général */
+/* Style pour la section d'accueil */
+.hero {
+    /* Fond de votre site beige */
+    background-color: #FFFDF5;
+    /* Espace pour centrer le contenu verticalement */
+    padding: 100px 20px;
+}
+
+/* Le conteneur centré */
+.welcome-container {
+    text-align: center; /* Centre tout le texte horizontalement */
+    max-width: 800px;
+    margin: 0 auto; /* Centre le conteneur sur la page */
+}
+
+/* Le titre agrandi, centré et avec émojis */
+.special-title {
+    /* Écrit encore plus gros */
+    font-size: 64px; 
+    /* Met le texte en majuscule */
+    text-transform: uppercase;
+    /* Écart entre les lettres pour l'élégance */
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    /* Permet aux émojis de s'aligner parfaitement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espace entre les émojis et le texte */
+}
+
+/* Style de la phrase de description en dessous */
+.hero p {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+    margin-top: 0;
+}
+/* Style du Header */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanc légèrement transparent */
+    padding: 15px 0;
+    position: sticky; /* Reste en haut au défilement */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between; /* Logo à gauche, Menu à droite */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Style du Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #333;
+}
+
+.logo span {
+    color: #b08d57; /* Ta couleur dorée */
+    font-style: italic;
+}
+
+/* Menu de navigation */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #b08d57; /* Change de couleur au survol */
+}
+
+/* Bouton Contact spécial dans le menu */
+.nav-contact {
+    background-color: #333;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background 0.3s !important;
+}
+
+.nav-contact:hover {
+    background-color: #b08d57 !important;
+}
 body {
-    background-color: #F5F5DC; /* Beige pur */
+    background-color: #B08D57; /* Beige pur */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
@@ -25,7 +132,7 @@ h2 {
 
 /* Style des cartes produits */
 .card {
-    background: white;
+    background: white ;
     padding: 15px;
     border-radius: 8px;
     width: 250px; /* Largeur fixe pour l'alignement */
