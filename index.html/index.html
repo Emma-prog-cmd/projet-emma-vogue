@@ -1,200 +1,198 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Emma's Vogue</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma's Vogue | Luxury Shop</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
 <body>
 
-<!-- HEADER -->
 <header class="main-header">
-    <div class="container">
+    <div class="container header-flex">
         <div class="logo">
-            Emma's <span>Vogue</span>
+            EMMA'S <span>VOGUE</span>
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#robes">Robes</a></li>
-                <li><a href="#sacs">Sacs</a></li>
-                <li><a href="#talons">Talons</a></li>
-                <li><a href="#contact" class="nav-contact">Contact</a></li>
+                <li><a href="#home" class="nav-btn">Accueil</a></li>
+                <li><a href="#robes" class="nav-btn">Robes</a></li>
+                <li><a href="#sacs" class="nav-btn">Sacs</a></li>
+                <li><a href="#talons" class="nav-btn">Talons</a></li>
+                <li><a href="#contact" class="nav-btn">Contact</a></li>
             </ul>
         </nav>
+        <div class="cart-container">
+            <span class="cart-icon">🛒</span>
+            <span id="cart-count">0</span>
+        </div>
     </div>
 </header>
 
-<!-- ACCUEIL -->
 <section class="hero" id="home">
-    <div class="welcome-container">
-        <h1 class="special-title">
-            👗 Emma's Vogue 💋
-        </h1>
-        <p>La mode qui révèle votre élégance</p>
+    <div class="hero-content">
+        <span class="hero-tagline">Nouvelle Collection 2026</span>
+        <h1 class="hero-title">👗 Emma's Vogue 💋</h1>
+        <p class="hero-description">L'élégance à la portée de chaque femme. Découvrez nos pièces captivantes sélectionnées avec soin à Cotonou.</p>
+        <div class="hero-buttons">
+            <a href="#robes" class="btn-primary">Découvrir la collection</a>
+            <a href="#contact" class="btn-secondary">Nous contacter</a>
+        </div>
     </div>
 </section>
-<!-- ROBES -->
-<section class="products" id="robes">
-<h2>Nos Robes</h2>
-<div class="product-grid">
+    <section class="products" id="robes">
+        <h2 class="section-title">Nos Robes</h2>
+        <div class="product-grid">
+            <div class="card">
+                <img src="images/robe1.jpg">
+                <h3>Robe Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander" data-product="Robe glamour" data-price="18000">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/robe2.jpg">
+                <h3>Robe Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/robe3.jpg">
+                <h3>Robe Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/robe4.jpg">
+                <h3>Robe Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/robe5.jpg">
+                <h3>Robe Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/robe6.jpg">
+                <h3>Robe Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<img src="images/robe1.jpg" ">
-<h3>Robe Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
+    <section class="products" id="sacs">
+        <h2 class="section-title">Nos Sacs</h2>
+        <div class="product-grid">
+            <div class="card">
+                <img src="images/sac1.jpg">
+                <h3>sac élégant</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/sac2.jpg">
+                <h3>sac Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/sac3.jpg">
+                <h3>sac Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/sac4.jpg">
+                <h3>sac Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/sac5.jpg">
+                <h3>sac Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/sac6.jpg">
+                <h3>sac Glamour</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<img src="images/robe2.jpg" >
-<h3>Robe Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
+    <section class="products" id="talons">
+        <h2 class="section-title">Nos Talons</h2>
+        <div class="product-grid">
+            <div class="card">
+                <img src="images/talon1.jpg">
+                <h3>Talon de luxe</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/talon2.jpg">
+                <h3>Talon de luxe</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/talon3.jpg">
+                <h3>Talon de luxe</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/talon4.jpg">
+                <h3>Talon de luxe</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/talon5.jpg">
+                <h3>Talon de luxe</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+            <div class="card">
+                <img src="images/talon6.jpg">
+                <h3>Talon de luxe</h3>
+                <p class="price">18 000 FCFA</p>
+                <button class="btn-commander">Commander</button>
+            </div>
+        </div>
+    </section>
+</main>
 
-<div class="card">
-<img src="images/robe3.jpg" >
-<h3>Robe Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/robe4.jpg" ">
-<h3>Robe Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/robe5.jpg" ">
-<h3>Robe Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/robe6.jpg" ">
-<h3>Robe Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-</div>
-</section>
-
-<!-- SACS -->
-<section class="products" id="sacs">
-<h2>Sacs</h2>
-<div class="product-grid">
-
-<div class="card">
-<img src="images/sac1.jpg" >
-<h3>sac élégant</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/sac2.jpg" >
-<h3>sac Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/sac3.jpg" >
-<h3>sac Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/sac4.jpg" >
-<h3>sac Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/sac5.jpg" >
-<h3>sac Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/sac6.jpg" >
-<h3>sac Glamour</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-</div>
-</section>
-
-<!-- TALONS -->
-<section class="products" id="talons">
-<h2>Talons</h2>
-<div class="product-grid">
-
-<div class="card">
-<img src="images/talon1.jpg" >
-<h3>Talon de luxe</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/talon2.jpg" >
-<h3>Talon de luxe</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/talon3.jpg" >
-<h3>Talon de luxe</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/talon4.jpg" >
-<h3>Talon de luxe</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/talon5.jpg" >
-<h3>Talon de luxe</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-<div class="card">
-<img src="images/talon6.jpg" >
-<h3>Talon de luxe</h3>
-<p class="price">18 000 FCFA</p>
-<button class="btn-commander">Commander</button>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
 <section class="contact" id="contact">
-<h2>Contact</h2>
-<p>📍 Cotonou-Sikecodji | 📞 +229 01 50 50 96 00</p>
+    <div class="contact-box">
+        <h2>Contactez-nous</h2>
+        <p>📍 Cotonou-Sikecodji</p>
+        <p>📞 +229 01 50 50 96 00</p>
+    </div>
 </section>
 
-<!-- FOOTER -->
+<div id="modal-commande" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="info-produit">Produit sélectionné</h3>
+        <form id="form-client">
+            <input type="text" id="nom-client" placeholder="Ton nom complet" required>
+            <input type="tel" id="tel-client" placeholder="Ton numéro WhatsApp" required>
+            <button type="submit" style="background: #25D366; color: white; border: none; padding: 10px; width: 100%; cursor: pointer;">
+                Confirmer sur WhatsApp 💬
+            </button>
+        </form>
+    </div>
+</div>
+
 <footer>
-© 2026 Emma's Vogue
+    <p>&copy; 2026 Emma's Vogue | Design by Emma</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

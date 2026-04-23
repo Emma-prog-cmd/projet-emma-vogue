@@ -1,181 +1,248 @@
-/* Style général */
-/* Style pour la section d'accueil */
-.hero {
-    /* Fond de votre site beige */
-    background-color: #FFFDF5;
-    /* Espace pour centrer le contenu verticalement */
-    padding: 100px 20px;
+/* 1. VARIABLES ET BASES */
+:root {
+    --chocolat: #4B2C20;
+    --or: #B08D57;
+    --creme: #FFFDF5;
 }
 
-/* Le conteneur centré */
-.welcome-container {
-    text-align: center; /* Centre tout le texte horizontalement */
-    max-width: 800px;
-    margin: 0 auto; /* Centre le conteneur sur la page */
+body {
+    font-family: 'Playfair Display', serif; /* Un style très Vogue */
+    background-color: var(--creme);
+    margin: 0;
+    padding: 0;
 }
 
-/* Le titre agrandi, centré et avec émojis */
-.special-title {
-    /* Écrit encore plus gros */
-    font-size: 64px; 
-    /* Met le texte en majuscule */
-    text-transform: uppercase;
-    /* Écart entre les lettres pour l'élégance */
-    letter-spacing: 5px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    /* Permet aux émojis de s'aligner parfaitement */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px; /* Espace entre les émojis et le texte */
-}
-
-/* Style de la phrase de description en dessous */
-.hero p {
-    font-size: 18px;
-    color: #555;
-    font-style: italic;
-    margin-top: 0;
-}
-/* Style du Header */
+/* 2. LE MENU (HEADER) */
 .main-header {
-    background-color: rgba(255, 255, 255, 0.95); /* Blanc légèrement transparent */
-    padding: 15px 0;
-    position: sticky; /* Reste en haut au défilement */
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.main-header .container {
+.header-flex {
     display: flex;
-    justify-content: space-between; /* Logo à gauche, Menu à droite */
+    justify-content: space-around;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
-/* Style du Logo */
 .logo {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #333;
 }
 
-.logo span {
-    color: #b08d57; /* Ta couleur dorée */
-    font-style: italic;
+.logo span { color: var(--or); }
+
+.navbar ul { display: flex; list-style: none; gap: 20px; }
+.navbar a { text-decoration: none; color: var(--chocolat); font-weight: 500; }
+
+/* 3. LE PANIER */
+.cart-status {
+    background: var(--chocolat);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
 }
 
-/* Menu de navigation */
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+/* 4. LA GRILLE DE PRODUITS (C'est ça qui va tout changer !) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.cart-status {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Effet de clic sur le bouton */
+.btn-commander:active {
+    transform: scale(0.95);
+}
+
+.card:hover { transform: translateY(-10px); }
+
+/* Taille des images corrigée */
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Pour que l'image ne soit pas écrasée */
+}
+
+/* 5. BOUTONS ET TITRES */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 50px;
+    color: var(--chocolat);
+}
+
+.btn-commander {
+    background: var(--chocolat);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.btn-commander:hover { background: var(--or); }
+
+/* 6. CONTACT ET FOOTER */
+.contact-box {
+    background: white;
+    text-align: center;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 10px;
+}/* VARIABLES DE COULEURS */
+:root {
+    --chocolat: #4B2C20;
+    --or: #B08D57;
+    --creme: #FFFDF5;
+    --blanc: #ffffff;
+}
+
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7); display: visibility; align-items: center; justify-content: center;
+    z-index: 9999;
+}
+.modal-content {
+    background: white; padding: 30px; border-radius: 15px;
+    width: 350px; text-align: center; position: relative;
+}
+.modal-content input {
+    width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;
+}
+.btn-panier {
+    width: 100%; background: #4B2C20; color: white; border: none;
+    padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold;
+}
+.close { position: absolute; right: 15px; top: 10px; cursor: pointer; font-size: 24px; }
+
+/* HEADER FIXE ET ÉLÉGANT */
+.main-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* Effet de flou moderne */
+    border-bottom: 1px solid rgba(75, 44, 32, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    color: var(--chocolat);
+}
+
+.logo span { color: var(--or); font-weight: 300; }
+
+.navbar ul { display: flex; list-style: none; gap: 30px; align-items: center; }
 
 .navbar a {
     text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    font-size: 14px;
+    color: var(--chocolat);
+    font-size: 0.9rem;
     text-transform: uppercase;
-    transition: color 0.3s;
+    transition: 0.3s;
 }
 
-.navbar a:hover {
-    color: #b08d57; /* Change de couleur au survol */
-}
+.navbar a:hover { color: var(--or); }
 
-/* Bouton Contact spécial dans le menu */
-.nav-contact {
-    background-color: #333;
+.nav-btn {
+    background: var(--chocolat);
     color: white !important;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: background 0.3s !important;
+    padding: 8px 20px;
+    border-radius: 50px;
 }
 
-.nav-contact:hover {
-    background-color: #b08d57 !important;
-}
-body {
-    background-color: #B08D57; /* Beige pur */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Alignement en ligne dynamique */
-.product-grid {
+/* SECTION HERO (ACCUEIL) */
+.hero {
+    height: 80vh;
     display: flex;
-    flex-wrap: wrap; /* Permet de passer à la ligne si l'écran est petit */
-    justify-content: center; /* Centre les produits */
-    gap: 30px; /* Espace entre les cartes */
-    padding: 20px;
-}
-
-/* Style des cartes produits */
-.card {
-    background: white ;
-    padding: 15px;
-    border-radius: 8px;
-    width: 250px; /* Largeur fixe pour l'alignement */
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Ombre légère */
-    transition: transform 0.3s ease; /* Animation au survol */
+    background: linear-gradient(rgba(255, 253, 245, 0.8), rgba(255, 253, 245, 0.8)), 
+                url('images/fond-mode.jpg'); /* Optionnel : ajoute une image de fond douce */
+    background-size: cover;
+    padding: 0 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* La carte monte un peu au survol */
-}
-
-/* Ajustement des images */
-.card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover; /* Recadre l'image proprement sans la déformer */
-    border-radius: 4px;
-}
-
-.card h3 {
-    font-size: 1.1rem;
-    margin: 15px 0 10px;
-}
-
-.price {
+.hero-tagline {
+    color: var(--or);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
     font-weight: bold;
-    color: #b08d57; /* Couleur dorée/bronze pour le prix */
-    margin-bottom: 15px;
 }
 
-/* Bouton Commander */
-.btn-commander {
-    background-color: #333;
+.hero-title {
+    font-size: 4rem;
+    color: var(--chocolat);
+    margin: 20px 0;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* BOUTONS HERO */
+.hero-buttons { display: flex; gap: 15px; justify-content: center; }
+
+.btn-primary {
+    background: var(--chocolat);
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.3s;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-.btn-commander:hover {
-    background-color: #555;
+.btn-secondary {
+    border: 2px solid var(--chocolat);
+    color: var(--chocolat);
+    padding: 13px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
 }
+
+.btn-primary:hover { background: var(--or); border-color: var(--or); }
