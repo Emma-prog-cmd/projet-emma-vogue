@@ -371,3 +371,13 @@ body {
     display: none !important;
 }
 
+/* Suppression ciblée du compteur fantôme */
+header .cart-count, 
+header #cart-counter, 
+header .container > span:last-of-type,
+header div > span:last-child {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    font-size: 0 !important;
+}
