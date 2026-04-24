@@ -339,3 +339,35 @@ body {
         margin: 10% auto;
     }
 }
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-links a {
+    display: flex;
+    flex-direction: column; /* L'icône au-dessus du texte */
+    align-items: center;
+    text-decoration: none;
+    color: #4B2C20; /* Ton marron chocolat */
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.nav-links a i {
+    font-size: 20px; /* Taille de l'icône */
+    margin-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: #d4af37; /* Changement de couleur au survol */
+}
+
+/* Cache l'ancien petit panier gris avec le 0 */
+.cart-icon, .cart-count, #cart-counter {
+    display: none !important;
+}
+
