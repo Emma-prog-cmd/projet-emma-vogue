@@ -2,61 +2,76 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalPanier = document.getElementById('modal-panier');
     const listeUl = document.getElementById('liste-panier');
     const totalSpan = document.getElementById('total-panier');
-    const buttons = document.querySelectorAll('.btn-commander');
+    const buttons = document.querySelectorAll('.btn-ajouter-panier');
+    const compteurHeader = document.getElementById('compteur-panier');
     
-    // On commence avec un panier vide pour chaque "session" (nouveau client)
+    // Panier vide au démarrage (chaque nouveau client commence à zéro)
     let panier = [];
 
-    // 1. Ajouter un produit avec son prix
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const card = btn.closest('.card');
-            const nom = card.querySelector('h3').innerText;
-            // On récupère le prix et on le transforme en nombre
-            const prix = parseInt(card.querySelector('.prix-produit').innerText);
+    // --- 1. CLIC SUR COMMANDER ---
+buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.card');
+        const nom = card.querySelector('h3').innerText;
+        
+        // Récupération du prix (on utilise .price comme convenu)
+        let prixTexte = card.querySelector('.price').innerText;
+        let prixChiffre = parseInt(prixTexte.replace(/[^0-9]/g, '')) || 0;
 
-            panier.push({ nom: nom, prix: prix });
-            actualiserAffichagePanier();
-            alert(nom + " ajouté au panier !");
-        });
+        // On ajoute le produit au panier
+        panier.push({ nom: nom, prix: prixChiffre });
+        
+        // On met à jour l'affichage (total et compteur)
+        actualiserAffichage();
+
+        // LE PETIT MESSAGE POUR LE CLIENT
+        // --- Code de la notification ---
+		const toast = document.getElementById('toast-notification');
+		toast.innerText = nom + " ajouté avec succès ✅";
+		toast.style.display = 'block';
+
+	// Fait disparaître le message après 3 secondes
+	setTimeout(() => {
+    	toast.style.display = 'none';
+	}, 3000);;
     });
-
-    // 2. Fonction pour calculer et afficher
-    function actualiserAffichagePanier() {
+});
+    // --- 2. MISE À JOUR VISUELLE ---
+    function actualiserAffichage() {
         listeUl.innerHTML = "";
-        let total General = 0;
+        let sommeTotale = 0;
 
-        panier.forEach((item, index) => {
-            totalGeneral += item.prix;
+        panier.forEach((item) => {
+            sommeTotale += item.prix;
             let li = document.createElement('li');
-            li.innerHTML = `${item.nom} <span>${item.prix} FCFA</span>`;
+            li.style.display = "flex";
+            li.style.justifyContent = "space-between";
+            li.innerHTML = `<span>${item.nom}</span> <b>${item.prix} FCFA</b>`;
             listeUl.appendChild(li);
         });
 
-        totalSpan.innerText = totalGeneral;
-        // Met à jour le compteur du header s'il existe
-        if(document.getElementById('compteur-panier')) {
-            document.getElementById('compteur-panier').innerText = panier.length;
-        }
+        totalSpan.innerText = sommeTotale;
+        if (compteurHeader) compteurHeader.innerText = panier.length;
     }
 
-    // 3. Ouvrir/Fermer le panier
+    // --- 3. OUVRIR / FERMER ---
     document.getElementById('btn-voir-panier').onclick = () => modalPanier.style.display = 'flex';
     document.querySelector('.close-panier').onclick = () => modalPanier.style.display = 'none';
 
-    // 4. Finaliser et VIDER le panier (pour le prochain client)
+    // --- 4. FINALISER ET VIDER (La partie importante) ---
     document.getElementById('btn-finaliser-commande').onclick = () => {
-        if (panier.length === 0) return alert("Le panier est vide !");
+        if (panier.length === 0) return alert("Votre panier est vide !");
         
-        let message = "Bonjour Emma's Vogue, je souhaite commander :\n";
-        panier.forEach(item => message += `- ${item.nom} (${item.prix} FCFA)\n`);
+        let message = "Bonjour Emma's Vogue, voici ma commande :\n\n";
+        panier.forEach(item => message += `- ${item.nom} : ${item.prix} FCFA\n`);
         message += "\nTotal : " + totalSpan.innerText + " FCFA";
 
         window.open(`https://wa.me/2290150509600?text=${encodeURIComponent(message)}`, '_blank');
         
-        // CRUCIAL : On vide le panier après la commande
+        // VIDER LE PANIER IMMÉDIATEMENT APRÈS LA COMMANDE
         panier = [];
-        actualiserAffichagePanier();
+        actualiserAffichage();
         modalPanier.style.display = 'none';
+        alert("Panier envoyé ! Il est maintenant vide pour une nouvelle commande.");
     };
 });

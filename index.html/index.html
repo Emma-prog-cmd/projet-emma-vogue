@@ -16,7 +16,7 @@
                 </ul>
         </div>
         <p>Total : <span id="total-panier">0</span> FCFA</p>
-        <button id="btn-finaliser-commande" class="btn-commander">
+        <button id="btn-finaliser-commande" class="btn-ajouter-panier">
             Finaliser sur WhatsApp
         </button>
     </div>
@@ -31,12 +31,14 @@
         <form id="form-client">
             <input type="text" id="nom-client" placeholder="Votre nom" required>
             <input type="tel" id="tel-client" placeholder="Votre numéro WhatsApp" required>
-            <button type="submit" id="btn-commander">Commander</button>
+            <button type="submit" id="btn-ajouter-panier">Ajouter au panier</button>
         </form>
     </div>
 </div>
 
 <body>
+	
+	<div id="toast-notification" class="toast"></div>
 
 <header class="main-header">
     <div class="container header-flex">
@@ -82,37 +84,37 @@
                 <img src="images/robe1.jpg">
                 <h3>Robe Glamour</h3>
                 <p class="price">18 000 FCFA</p>
-                <button class="btn-commander" data-product="Robe glamour" data-price="18000">Commander</button>
+                <button class="btn-ajouter-panier" data-product="Robe glamour" data-price="18000">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/robe2.jpg">
                 <h3>Robe Soirée</h3>
                 <p class="price">28 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/robe3.jpg">
                 <h3>Robe chic</h3>
                 <p class="price">23 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/robe4.jpg">
                 <h3>Robe ordinaire</h3>
                 <p class="price">32 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/robe5.jpg">
                 <h3>Robe avec fente sur le côté</h3>
                 <p class="price">40 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/robe6.jpg">
                 <h3>Robe velours rouge</h3>
                 <p class="price">10 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
         </div>
     </section>
@@ -124,37 +126,37 @@
                 <img src="images/sac1.jpg">
                 <h3>sac élégant</h3>
                 <p class="price">10 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/sac2.jpg">
                 <h3>sac Glamour</h3>
                 <p class="price">15 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/sac3.jpg">
                 <h3>sac de marque</h3>
                 <p class="price">20 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/sac4.jpg">
                 <h3>sac chic</h3>
                 <p class="price">19 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/sac5.jpg">
                 <h3>sac magnifique</h3>
                 <p class="price">35 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/sac6.jpg">
                 <h3>sac girly</h3>
                 <p class="price">22 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
         </div>
     </section>
@@ -166,37 +168,37 @@
                 <img src="images/talon1.jpg">
                 <h3>Talon de luxe</h3>
                 <p class="price">18 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/talon2.jpg">
                 <h3>Talon bien chic</h3>
                 <p class="price">25 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/talon3.jpg">
                 <h3>Talon bien haut</h3>
                 <p class="price">48 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/talon4.jpg">
                 <h3>Talon pointu</h3>
                 <p class="price">55 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/talon5.jpg">
                 <h3>Talon léger</h3>
                 <p class="price">25 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
             <div class="card">
                 <img src="images/talon6.jpg">
                 <h3>Talon élégant</h3>
                 <p class="price">18 000 FCFA</p>
-                <button class="btn-commander">Commander</button>
+                <button class="btn-ajouter-panier">Ajouter au panier</button>
             </div>
         </div>
     </section>

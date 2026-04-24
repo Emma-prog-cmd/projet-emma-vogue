@@ -75,7 +75,7 @@ body {
 }
 
 /* Effet de clic sur le bouton */
-.btn-commander:active {
+.btn-ajouter-panier:active {
     transform: scale(0.95);
 }
 
@@ -96,7 +96,7 @@ body {
     color: var(--chocolat);
 }
 
-.btn-commander {
+.btn-ajouter-panier {
     background: var(--chocolat);
     color: white;
     border: none;
@@ -107,7 +107,7 @@ body {
     transition: 0.3s;
 }
 
-.btn-commander:hover { background: var(--or); }
+.btn-ajouter-panier:hover { background: var(--or); }
 
 /* 6. CONTACT ET FOOTER */
 .contact-box {
@@ -137,7 +137,7 @@ body {
 .modal-content input {
     width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;
 }
-.btn-commander {
+.btn-ajouter-panier {
     width: 100%; background: #4B2C20; color: white; border: none;
     padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold;
 }
@@ -277,4 +277,65 @@ body {
     right: 15px;
     cursor: pointer;
     font-size: 24px;
+}
+
+/* La petite case de notification */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #4B2C20; /* Ton marron */
+    color: white;
+    padding: 16px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: none; /* Caché par défaut */
+    z-index: 10000;
+    font-family: 'Arial', sans-serif;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Animation pour que ça glisse joliment */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* --- ADAPTATION MOBILE (MEDIA QUERY) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuster la grille des produits : 1 seul produit par ligne sur mobile */
+    .product-grid {
+        display: grid;
+        grid-template-columns: 1fr !important; /* Force une seule colonne */
+        gap: 20px;
+        padding: 10px;
+    }
+
+    /* 2. Ajuster le menu (Header) */
+    header {
+        flex-direction: column; /* Aligne le logo et le panier l'un sous l'autre */
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Permet aux liens de revenir à la ligne s'ils sont trop nombreux */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* 3. Ajuster la taille des images pour qu'elles ne dépassent pas */
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 4. Rendre la modale du panier plus large sur mobile */
+    .modal-content {
+        width: 90% !important;
+        margin: 10% auto;
+    }
 }
