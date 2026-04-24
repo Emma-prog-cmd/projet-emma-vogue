@@ -8,33 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Panier vide au démarrage (chaque nouveau client commence à zéro)
     let panier = [];
 
-    // --- 1. CLIC SUR COMMANDER ---
-buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const card = btn.closest('.card');
+document.addEventListener('click', (event) => {
+    // On vérifie si l'élément cliqué est un bouton d'ajout
+    if (event.target.classList.contains('btn-ajouter-panier')) {
+        const btn = event.target;
+        const card = btn.closest('.card'); // Vérifie bien que ta section bracelet utilise aussi la classe 'card'
         const nom = card.querySelector('h3').innerText;
         
-        // Récupération du prix (on utilise .price comme convenu)
+        // Récupération du prix
         let prixTexte = card.querySelector('.price').innerText;
-        let prixChiffre = parseInt(prixTexte.replace(/[^0-9]/g, '')) || 0;
+        let prixChiffre = parseInt(prixTexte.replace(/[^\d]/g, '')) || 0;
 
-        // On ajoute le produit au panier
+        // On ajoute au panier
         panier.push({ nom: nom, prix: prixChiffre });
-        
-        // On met à jour l'affichage (total et compteur)
+
+        // Mise à jour de l'affichage
         actualiserAffichage();
 
-        // LE PETIT MESSAGE POUR LE CLIENT
-        // --- Code de la notification ---
-		const toast = document.getElementById('toast-notification');
-		toast.innerText = nom + " ajouté avec succès ✅";
-		toast.style.display = 'block';
-
-	// Fait disparaître le message après 3 secondes
-	setTimeout(() => {
-    	toast.style.display = 'none';
-	}, 3000);;
-    });
+        // Notification (ton code toast)
+        const toast = document.getElementById('toast-notification');
+        toast.innerText = nom + " ajouté avec succès ✅";
+        toast.style.display = 'block';
+        
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 3000);
+    }
 });
     // --- 2. MISE À JOUR VISUELLE ---
     function actualiserAffichage() {
