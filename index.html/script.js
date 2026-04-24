@@ -60,7 +60,13 @@ buttons.forEach(btn => {
 
     // --- 4. FINALISER ET VIDER (La partie importante) ---
     document.getElementById('btn-finaliser-commande').onclick = () => {
-        if (panier.length === 0) return alert("Votre panier est vide !");
+        if (panier.length === 0) {
+    const toast = document.getElementById('toast-notification');
+    toast.innerHTML = "Votre panier est vide ! 🛒";
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    return;
+}
         
         let message = "Bonjour Emma's Vogue, voici ma commande :\n\n";
         panier.forEach(item => message += `- ${item.nom} : ${item.prix} FCFA\n`);
@@ -72,6 +78,22 @@ buttons.forEach(btn => {
         panier = [];
         actualiserAffichage();
         modalPanier.style.display = 'none';
-        alert("Panier envoyé ! Il est maintenant vide pour une nouvelle commande.");
+        // ... après avoir ouvert WhatsApp ...
+window.open(`https://wa.me/2290150509600?text=${encodeURIComponent(message)}`, '_blank');
+
+// VIDER ET AFFICHER LA NOTIFICATION PROFESSIONNELLE
+panier = [];
+actualiserAffichage();
+modalPanier.style.display = 'none';
+
+// Appel de la notification élégante
+const toast = document.getElementById('toast-notification');
+toast.innerHTML = "Commande envoyée avec succès ✅"; 
+toast.style.display = 'block';
+
+// Disparaît après 3 secondes
+setTimeout(() => {
+    toast.style.display = 'none';
+}, 3000);
     };
 });
