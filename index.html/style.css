@@ -12,41 +12,64 @@ body {
     padding: 0;
 }
 
-/* 2. LE MENU (HEADER) */
+/* 1. LE CONTENEUR PRINCIPAL (Correction du nom) */
 .main-header {
     background: white;
-    padding: 20px 0;
+    padding: 10px 0; /* Correction de l'unité */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-.header-flex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Aligne les 3 blocs avec de l'espace */
     align-items: center;
+    width: 100%;
 }
 
+/* 2. LE LOGO (EMMA'S VOGUE) */
 .logo {
-    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    line-height: 1.2;
     font-weight: bold;
+    color: #4B2C20;
+    text-align: left;
     text-transform: uppercase;
 }
 
-.logo span { color: var(--or); }
-
-.navbar ul { display: flex; list-style: none; gap: 20px; }
-.navbar a { text-decoration: none; color: var(--chocolat); font-weight: 500; }
-
-/* 3. LE PANIER */
-.cart-status {
-    background: var(--chocolat);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 25px;
+/* 3. LES LIENS (ICONES AU CENTRE) */
+.nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 40px;
+    align-items: center;
 }
 
+.nav-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 10px;
+}
+
+.nav-links i {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+/* 4. LE BOUTON PANIER (A DROITE) */
+.btn-panier-header {
+    background-color: #4B2C20;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap; /* Force une seule ligne */
+}
 /* 4. LA GRILLE DE PRODUITS (C'est ça qui va tout changer !) */
 .product-grid {
     display: grid;
@@ -344,7 +367,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 60px;
+    gap: 10px;
 }
 
 .nav-links a {
@@ -381,3 +404,68 @@ header div > span:last-child {
     opacity: 0 !important;
     font-size: 0 !important;
 }
+
+.hero-section {
+    padding: 80px 20px;
+    background-color: #fcfcfc; /* Un blanc cassé très propre */
+    text-align: center;
+}
+
+.hero-subtitle {
+    letter-spacing: 5px;
+    font-size: 14px;
+    color: #8b5a2b; /* Un doré mat ou marron clair */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif; /* Police chic */
+    font-size: 65px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 2px;
+    background-color: #1a1a1a;
+    margin: 25px auto;
+}
+
+.hero-description {
+    font-style: italic;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Transformation du lien en bouton chic */
+.hero-content a, .btn-contact {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: #1a1a1a; /* Noir élégant */
+    color: #ffffff !important; /* Texte blanc */
+    text-decoration: none !important; /* Enlève le soulignement bleu */
+    text-transform: uppercase; /* Majuscules pour le style */
+    font-size: 14px;
+    letter-spacing: 2px; /* Espace entre les lettres */
+    font-weight: 600;
+    border-radius: 0; /* Garder des angles droits pour le côté luxe */
+    transition: all 0.3s ease; /* Animation douce */
+    border: 1px solid #1a1a1a;
+}
+
+/* Effet au survol (quand on pose la souris dessus) */
+.hero-content a:hover, .btn-contact:hover {
+    background-color: transparent;
+    color: #1a1a1a !important;
+    border: 1px solid #1a1a1a;
+    transform: translateY(-3px); /* Le bouton monte légèrement */
+}
+
