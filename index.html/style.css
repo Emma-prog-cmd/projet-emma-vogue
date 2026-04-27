@@ -474,8 +474,8 @@ html {
 }
 
 .img-logo {
-    height: 55px;
-    width: auto;
+    height: 100px;
+    width: 200px;
     border-radius: 5px;
     object-fit: contain;
 }
@@ -505,7 +505,7 @@ html {
     }
 
     .nav-links {
-        gap: 25px !important;
+        gap: 8px !important;
     }
 
     .nav-links a span {
