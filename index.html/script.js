@@ -1,3 +1,11 @@
+document.querySelector('a[href="#"], a[href="#accueil"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const modalPanier = document.getElementById('modal-panier');
     const listeUl = document.getElementById('liste-panier');
@@ -12,7 +20,7 @@ document.addEventListener('click', (event) => {
     // On vérifie si l'élément cliqué est un bouton d'ajout
     if (event.target.classList.contains('btn-ajouter-panier')) {
         const btn = event.target;
-        const card = btn.closest('.card'); // Vérifie bien que ta section bracelet utilise aussi la classe 'card'
+        const card = btn.closest('.card');  
         const nom = card.querySelector('h3').innerText;
         
         // Récupération du prix
@@ -80,12 +88,12 @@ document.addEventListener('click', (event) => {
         // ... après avoir ouvert WhatsApp ...
 window.open(`https://wa.me/2290150509600?text=${encodeURIComponent(message)}`, '_blank');
 
-// VIDER ET AFFICHER LA NOTIFICATION PROFESSIONNELLE
+//  AFFICHER LA NOTIFICATION 
 panier = [];
 actualiserAffichage();
 modalPanier.style.display = 'none';
 
-// Appel de la notification élégante
+// Appel de la notification 
 const toast = document.getElementById('toast-notification');
 toast.innerHTML = "Commande envoyée avec succès ✅"; 
 toast.style.display = 'block';

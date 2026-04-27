@@ -6,13 +6,13 @@
 }
 
 body {
-    font-family: 'Playfair Display', serif; /* Un style très Vogue */
+    font-family: 'Playfair Display', serif; 
     background-color: var(--creme);
     margin: 0;
     padding: 0;
 }
 
-/* 1. LE CONTENEUR PRINCIPAL (Correction du nom) */
+/* 1. LE CONTENEUR PRINCIPAL */
 .main-header {
     background: white;
     padding: 10px 0; /* Correction de l'unité */
@@ -21,7 +21,7 @@ body {
     top: 0;
     z-index: 1000;
     display: flex;
-    justify-content: space-around; /* Aligne les 3 blocs avec de l'espace */
+    justify-content: space-around; 
     align-items: center;
     width: 100%;
 }
@@ -40,9 +40,10 @@ body {
 /* 3. LES LIENS (ICONES AU CENTRE) */
 .nav-links {
     display: flex !important;
-    flex-direction: row !important;
-    gap: 40px;
+    flex-direction: row ;
+    gap: 60px !important;
     align-items: center;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -68,9 +69,9 @@ body {
     border-radius: 20px;
     font-size: 12px;
     cursor: pointer;
-    white-space: nowrap; /* Force une seule ligne */
+    white-space: nowrap; 
 }
-/* 4. LA GRILLE DE PRODUITS (C'est ça qui va tout changer !) */
+/* 4. LA GRILLE DE PRODUITS */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -108,7 +109,7 @@ body {
 .card img {
     width: 100%;
     height: 350px;
-    object-fit: cover; /* Pour que l'image ne soit pas écrasée */
+    object-fit: cover; 
 }
 
 /* 5. BOUTONS ET TITRES */
@@ -169,7 +170,7 @@ body {
 /* HEADER FIXE ET ÉLÉGANT */
 .main-header {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px); /* Effet de flou moderne */
+    backdrop-filter: blur(10px); 
     border-bottom: 1px solid rgba(75, 44, 32, 0.1);
     padding: 15px 0;
     position: sticky;
@@ -185,14 +186,6 @@ body {
     margin: 0 auto;
 }
 
-.logo {
-    font-size: 28px;
-    letter-spacing: 3px;
-    font-weight: 800;
-    color: var(--chocolat);
-}
-
-.logo span { color: var(--or); font-weight: 300; }
 
 .navbar ul { display: flex; list-style: none; gap: 30px; align-items: center; }
 
@@ -221,7 +214,7 @@ body {
     justify-content: center;
     text-align: center;
     background: linear-gradient(rgba(255, 253, 245, 0.8), rgba(255, 253, 245, 0.8)), 
-                url('images/fond-mode.jpg'); /* Optionnel : ajoute une image de fond douce */
+                url('images/fond-mode.jpg'); 
     background-size: cover;
     padding: 0 20px;
 }
@@ -307,12 +300,12 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #4B2C20; /* Ton marron */
+    background-color: #4B2C20; 
     color: white;
     padding: 16px 25px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    display: none; /* Caché par défaut */
+    display: none; 
     z-index: 10000;
     font-family: 'Arial', sans-serif;
     animation: slideIn 0.5s ease-out;
@@ -330,21 +323,21 @@ body {
     /* 1. Ajuster la grille des produits : 1 seul produit par ligne sur mobile */
     .product-grid {
         display: grid;
-        grid-template-columns: 1fr !important; /* Force une seule colonne */
+        grid-template-columns: 1fr !important; 
         gap: 20px;
         padding: 10px;
     }
 
     /* 2. Ajuster le menu (Header) */
     header {
-        flex-direction: column; /* Aligne le logo et le panier l'un sous l'autre */
+        flex-direction: column; 
         text-align: center;
         padding: 10px;
     }
 
     .nav-links {
         display: flex;
-        flex-wrap: wrap; /* Permet aux liens de revenir à la ligne s'ils sont trop nombreux */
+        flex-wrap: wrap;  
         justify-content: center;
         gap: 10px;
         margin-top: 10px;
@@ -372,21 +365,21 @@ body {
 
 .nav-links a {
     display: flex;
-    flex-direction: column; /* L'icône au-dessus du texte */
+    flex-direction: column; 
     align-items: center;
     text-decoration: none;
-    color: #4B2C20; /* Ton marron chocolat */
+    color: #4B2C20; 
     font-size: 12px;
     transition: 0.3s;
 }
 
 .nav-links a i {
-    font-size: 20px; /* Taille de l'icône */
+    font-size: 20px; 
     margin-bottom: 5px;
 }
 
 .nav-links a:hover {
-    color: #d4af37; /* Changement de couleur au survol */
+    color: #d4af37; 
 }
 
 /* Cache l'ancien petit panier gris avec le 0 */
@@ -407,20 +400,20 @@ header div > span:last-child {
 
 .hero-section {
     padding: 80px 20px;
-    background-color: #fcfcfc; /* Un blanc cassé très propre */
+    background-color: #fcfcfc; 
     text-align: center;
 }
 
 .hero-subtitle {
     letter-spacing: 5px;
     font-size: 14px;
-    color: #8b5a2b; /* Un doré mat ou marron clair */
+    color: #8b5a2b; 
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif; /* Police chic */
+    font-family: 'Playfair Display', serif; 
     font-size: 65px;
     font-weight: 700;
     color: #1a1a1a;
@@ -449,23 +442,79 @@ header div > span:last-child {
     display: inline-block;
     margin-top: 30px;
     padding: 15px 40px;
-    background-color: #1a1a1a; /* Noir élégant */
-    color: #ffffff !important; /* Texte blanc */
-    text-decoration: none !important; /* Enlève le soulignement bleu */
-    text-transform: uppercase; /* Majuscules pour le style */
+    background-color: #1a1a1a; 
+    color: #ffffff !important; 
+    text-decoration: none !important; 
+    text-transform: uppercase; 
     font-size: 14px;
-    letter-spacing: 2px; /* Espace entre les lettres */
+    letter-spacing: 2px; 
     font-weight: 600;
-    border-radius: 0; /* Garder des angles droits pour le côté luxe */
-    transition: all 0.3s ease; /* Animation douce */
+    border-radius: 0; 
+    transition: all 0.3s ease; 
     border: 1px solid #1a1a1a;
 }
 
-/* Effet au survol (quand on pose la souris dessus) */
+/* Effet au survol */
 .hero-content a:hover, .btn-contact:hover {
     background-color: transparent;
     color: #1a1a1a !important;
     border: 1px solid #1a1a1a;
-    transform: translateY(-3px); /* Le bouton monte légèrement */
+    transform: translateY(-3px); 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 180px;
+}
+
+.img-logo {
+    height: 55px;
+    width: auto;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: bold;
+    color: #4B2C20;
+    text-transform: uppercase;
+}
+
+/* Force le header à rester sur une ligne sur mobile */
+@media (max-width: 600px) {
+    .main-header {
+        padding: 5px 2px !important;
+    }
+
+    .logo {
+        min-width: auto !important;
+        font-size: 10px !important;
+    }
+
+    .img-logo-svg {
+        height: 30px !important;
+    }
+
+    .nav-links {
+        gap: 8px !important;
+    }
+
+    .nav-links a span {
+        display: none;
+    }
+
+    .btn-panier-header {
+        padding: 5px !important;
+        width: 35px !important;
+        height: 35px !important;
+    }
+}
