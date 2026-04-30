@@ -1,3 +1,15 @@
+// On sélectionne tous les conteneurs qui doivent défiler horizontalement
+const scrollContainers = document.querySelectorAll('.conteneur-scroll');
+
+scrollContainers.forEach((container) => {
+    container.addEventListener('wheel', (evt) => {
+        // On empêche le défilement vertical classique
+        evt.preventDefault();
+        // On transforme le mouvement vertical de la molette en mouvement horizontal
+        container.scrollLeft += evt.deltaY;
+    });
+});
+
 document.querySelector('a[href="#"], a[href="#accueil"]').addEventListener('click', function(e) {
     e.preventDefault();
     window.scrollTo({
